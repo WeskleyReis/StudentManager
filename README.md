@@ -21,11 +21,23 @@
 
 **Integrante 4:**
 
+- Antonio Alexandre de Menezes Neto
+- GitHub: AntonioAlexandredeMenezesNeto
+
 **Integrante 5:**
+
+- Layssa Crystyna Souza dos Santos
+- GitHub: 
 
 **Integrante 6:**
 
+- Icaro Junior Santos Alves
+- GitHub:
+
 **Integrante 7:**
+
+- Max Silva
+- GitHub:
 
 **Integrante 8:**
 
@@ -140,11 +152,11 @@ O StudentManager será uma aplicação web composta por uma interface de usuári
 
 | Categoria | Tecnologia | Finalidade |
 |-----------|------------|------------|
-| Linguagem de Programação | [Nome] | [Finalidade] |
-| Front-end | [Nome] | [Finalidade] |
-| Back-end | [Nome] | [Finalidade] |
-| Banco de Dados | [Nome] | [Finalidade] |
-| Ferramentas | [Nome] | [Finalidade] |
+| Linguagem de Programação | JavaScript | Lógica do sistema |
+| Front-end | HTML e CSS | Estrutura e estilo da interface |
+| Back-end | Express | Gerenciamento do servidor |
+| Banco de Dados | SQLite | Armazenamento de dados |
+| Ferramentas | Figma | Prototipação da interface |
 
 ---
 

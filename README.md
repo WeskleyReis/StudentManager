@@ -37,7 +37,7 @@
 **Integrante 7:**
 
 - Max Silva
-- GitHub: Maxsilvaa79
+- GitHub: maxsilvaa79
 
 **Integrante 8:**
 

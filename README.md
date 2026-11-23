@@ -32,7 +32,7 @@
 **Integrante 6:**
 
 - Icaro Junior Santos Alves
-- GitHub:
+- GitHub: Ikaroojrr
 
 **Integrante 7:**
 

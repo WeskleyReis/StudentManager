@@ -27,7 +27,7 @@
 **Integrante 5:**
 
 - Layssa Crystyna Souza dos Santos
-- GitHub: 
+- GitHub: LayssaCrystyna 
 
 **Integrante 6:**
 
@@ -36,7 +36,7 @@
 
 **Integrante 7:**
 
-- Max Silva
+- Max Silva Pereira
 - GitHub: maxsilvaa79
 
 **Integrante 8:**

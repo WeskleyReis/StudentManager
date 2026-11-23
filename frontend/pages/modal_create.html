@@ -1,89 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Modal Create</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
     body {
-      background-color: #0B0D10;
-    }
-
-    .card {
-      width: fit-content;
-
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-    }
-
-    p {
       padding: 0;
       margin: 0;
     }
 
-    .titulo {
-      font-family: Cinzel;
-      font-size: 24px;
-      font-weight: 700;
-      color: #E7E9EC;
-    }
-
-    .subtitulo {
-      font-family: inter;
-      color: #E7E9EC;
-    }
-
-    img {
-      border-radius: 8px;
-    }
-
-    button {
-      cursor: pointer;
-
-      width: 100%;
-      padding: 24px;
-
-      background-color: #171C22;
-      border: none;
-      outline: none;
-      border-radius: 12px;
-    }
-
-    button a {
+    .background_modal {
+      height: 100dvh;
+      background-color: rgba(0, 0, 0, 0.5);
       display: flex;
-      gap: 16px;
       justify-content: center;
       align-items: center;
+    }
 
-      font-family: cinzel;
-      font-size: 24px;
+    .modal {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      font-family: inter;
+
+      background-color: white;
+      border-radius: 12px;
+    }
+    
+    .infor {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .titulo_modal{
+      margin: 0;
+      font-size: 32px;
       font-weight: 700;
-      color: #E7E9EC;
-      text-decoration: none;
+    }
+    
+    .subtitulo_modal {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .div_label {
+      display: flex;
+      gap: 16px;
+      align-items: end;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      width: 100%;
+    }
+
+    .modal input {
+      padding: 16px 24px;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      outline: none;
+      border-radius: 8px;
+      background-color: #F1F5F9;
+    }
+
+    .modal select {
+      height: fit-content;
+      padding: 16px 24px;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      outline: none;
+      border-radius: 8px;
+      background-color: #F1F5F9;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 24px;
+    }
+
+    .buttons button {
+      border: none;
+      outline: none;
+      border-radius: 8px;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      padding: 16px 24px;
+      width: 100%;
+
+      color: white;
+    }
+
+    .cancelar {
+      background-color: #DC2626;
+    }
+
+    .confirmar {
+      background-color: #16A34A;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <p class="titulo">
-      Uma jornada além da vingança
-    </p>
-    <p class="subtitulo">
-      Descrubra mais sobre a história de Kratos e sua joranda
-    </p>
-    <img src="god-of-war.jpg" alt="god-of-war.jpg">
-    <button>
-      <a href="https://youtu.be/2keP8VK7kDc?si=4PWR17x9xftT-wU4">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play preview-icon"><path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/><circle cx="12" cy="12" r="10"/></svg>
-        ASSISTIR AO VIDEO 
-      </a>
-    </button>
+  <div class="background_modal">
+    <div class="modal">
+      <div class="infor">
+        <p class="titulo_modal">Cadastrar novo aluno</p>
+        <p class="subtitulo_modal">Preencha os dados do estudante.</p>
+      </div>
+      <div class="div_label">
+        <label for="nome">
+          Nome Completo*
+          <input type="text" placeholder="Digite o nome do aluno" name="nome" id="name">
+        </label>
+        <label for="matricula">
+          Matrícula*
+          <input type="number" placeholder="Digite a matrícula do aluno" name="matricula" id="matricula">
+        </label>
+      </div>
+      <div class="div_label">
+        <label for="email">
+          Email*
+          <input type="text" placeholder="Digite o email do aluno" name="email" id="email">
+        </label>
+        <label for="curso">
+          Curso*
+          <input type="text" placeholder="Ex.: Engenharia de Software" name="curso" id="curso">
+        </label>
+      </div>
+      <div class="div_label">
+        <label for="nascimento">
+          Data de Nascimento*
+          <input type="date" name="nascimento" id="nascimento">
+        </label>
+        <label for="telefone">
+          Telefone
+          <input type="tel" placeholder="(00) 00000-0000" name="telefone" id="telefone">
+        </label>
+        <select name="periodo" id="periodo">
+          <option value="" disabled selected>Periodo</option>
+          <option value="primeiro">1º Semestre</option>
+          <option value="segundo">2º Semestre</option>
+          <option value="terceiro">3º Semestre</option>
+          <option value="quarto">4º Semestre</option>
+          <option value="quinto">5º Semestre</option>
+          <option value="sexto">6º Semestre</option>
+          <option value="setimo">7º Semestre</option>
+          <option value="oitavo">8º Semestre</option>
+        </select>
+      </div>
+      <div class="buttons">
+        <button class="cancelar">Cancelar</button>
+        <button class="confirmar">Confirmar</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>

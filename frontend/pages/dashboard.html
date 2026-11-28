@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentManager - Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside>
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2V3z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+        <path d="M8 17c.6-2 2.2-3 4-3s3.4 1 4 3"/>
+      </svg>
+      <div>
+        <strong>StudentManager</strong>
+        <span>GESTÃO ACADÊMICA</span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        Dashboard
+      </a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="topo">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="subtitulo">Gerencie os estudantes cadastrados, consulte históricos e atualize registros acadêmicos.</p>
+      </div>
+
+      <button class="btn-primario" id="btnNovo" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="8" r="4"/>
+          <path d="M2 21c0-4 3-6 7-6s7 2 7 6"/>
+          <path d="M19 8v6M16 11h6"/>
+        </svg>
+        Novo Aluno
+      </button>
+    </div>
+
+    <section class="cards" aria-label="Resumo">
+      <div class="card c-azul">
+        <div>
+          <small>TOTAL DE ALUNOS</small>
+          <h2 id="total">0</h2>
+        </div>
+        <div class="icone-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.5"/>
+            <path d="M2 20c0-3.5 3-5 7-5s7 1.5 7 5"/>
+            <path d="M16.5 4.5a3.5 3.5 0 0 1 0 7M18 15c2.5.5 4 2 4 5"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card c-verde">
+        <div>
+          <small>MATRÍCULAS ATIVAS</small>
+          <h2 id="ativas">0</h2>
+        </div>
+        <div class="icone-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="m8 12 3 3 5-6"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card c-laranja">
+        <div>
+          <small>TRANCADOS / INATIVOS</small>
+          <h2 id="outros">0</h2>
+        </div>
+        <div class="icone-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v6M12 16.5v.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="painel">
+      <div class="painel-topo">
+        <div>
+          <h3>Estudantes Cadastrados</h3>
+          <p>Clique em um aluno para visualizar todos os dados ou editar</p>
+        </div>
+
+        <div class="filtros">
+          <div class="busca">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input type="search" id="campoBusca" placeholder="Buscar por nome, matrícula ou curso" aria-label="Buscar estudantes">
+          </div>
+
+          <select id="filtroStatus" aria-label="Filtrar por status">
+            <option value="">Todos os status</option>
+            <option value="Ativo">Ativo</option>
+            <option value="Trancado">Trancado</option>
+            <option value="Inativo">Inativo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="esq">MATRÍCULA</th>
+              <th>ESTUDANTE</th>
+              <th>CURSO</th>
+              <th>PERÍODO</th>
+              <th>STATUS</th>
+              <th>AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaAlunos"></tbody>
+        </table>
+      </div>
+
+      <div class="rodape">
+        <span id="infoRodape"></span>
+        <div class="paginacao">
+          <button type="button" id="btnAnterior" aria-label="Página anterior">&lsaquo;</button>
+          <span id="paginaAtual">1</span>
+          <button type="button" id="btnProximo" aria-label="Próxima página">&rsaquo;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <form id="formAluno" method="dialog">
+      <h3 id="tituloModal">Novo Aluno</h3>
+
+      <label>Matrícula
+        <input type="text" id="fMatricula" required placeholder="#20240001">
+      </label>
+
+      <label>Nome completo
+        <input type="text" id="fNome" required>
+      </label>
+
+      <label>E-mail
+        <input type="email" id="fEmail" required>
+      </label>
+
+      <label>Curso
+        <input type="text" id="fCurso" required>
+      </label>
+
+      <label>Período
+        <input type="text" id="fPeriodo" required placeholder="3º Semestre">
+      </label>
+
+      <label>Status
+        <select id="fStatus">
+          <option>Ativo</option>
+          <option>Trancado</option>
+          <option>Inativo</option>
+        </select>
+      </label>
+
+      <div class="modal-acoes">
+        <button type="button" class="btn-sec" id="btnCancelar">Cancelar</button>
+        <button type="submit" class="btn-primario">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
